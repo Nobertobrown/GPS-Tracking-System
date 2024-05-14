@@ -1,0 +1,34 @@
+{
+  "footer": {
+    "resources": [
+      {
+        "text": "lorem",
+        "href": ""
+      },
+      {
+        "text": "ipsum",
+        "href": ""
+      }
+    ],
+    "follow_us": [
+      {
+        "text": "github",
+        "href": ""
+      },
+      {
+        "text": "discord",
+        "href": ""
+      }
+    ],
+    "legal": [
+      {
+        "text": "privacy policy",
+        "href": ""
+      },
+      {
+        "text": "terms & conditions",
+        "href": ""
+      }
+    ]
+  }
+}

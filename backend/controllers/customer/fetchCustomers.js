@@ -6,7 +6,7 @@ const fetchCustomers = async (req, res, next) => {
     const limit = 50;
     const skip = (page - 1) * limit;
 
-    const customers = await Customer.find().skip(skip).limit(limit);
+    const customers = await Customer.find().select("name email address nationalId age phoneNo -_id").skip(skip).limit(limit);
 
     if (customers.length === 0) {
       return res

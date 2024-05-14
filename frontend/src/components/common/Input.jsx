@@ -1,13 +1,23 @@
 import { twMerge } from "tailwind-merge";
 
 const Input = (props) => {
-  const { name, label, icon, type, className, placeholder, mandatory, ...restProps } =
-    props;
+  const {
+    name,
+    label,
+    icon,
+    type,
+    className,
+    placeholder,
+    mandatory,
+    ...restProps
+  } = props;
   return (
     <div className={className}>
-      <label htmlFor={name} className="mb-1 text-sm font-medium">
-        {label}{mandatory && (<span className="text-red-500">*</span>)}
-      </label>
+      {label && (
+        <label htmlFor={name} className="mb-1 text-sm font-medium">
+          {label} {mandatory && <span className="text-red-500">*</span>}
+        </label>
+      )}
       <div className="relative">
         {icon && (
           <div className="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 ">

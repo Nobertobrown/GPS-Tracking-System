@@ -3,7 +3,7 @@ const Customer = require("../../models/Customer");
 const postCustomer = (req, res, next) => {
   const customerName = req.body.name;
   const age = req.body.age;
-  const nationalId = req.body.nationalId;
+  const nationalId = req.body.nida;
   const email = req.body.email;
   const address = req.body.address;
   const phoneNo = req.body.phoneNo;

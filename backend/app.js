@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const helmet = require("helmet");
+// const helmet = require("helmet");
 const cors = require("cors");
 
 /******** importing routes *******/
@@ -18,7 +18,7 @@ const app = express();
 // };
 
 app.use(cors()); //options
-app.use(helmet());
+// app.use(helmet());
 app.use(bodyParser.json());
 // app.use("/images", express.static(path.join(__dirname, "images")));
 
@@ -42,8 +42,8 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(`${process.env.MONGODB_CONNECTION_STRING}`)
   .then((_) => {
-    app.listen(process.env.PORT || 7070, () => {
-      console.log(`Server started on port ${process.env.PORT || 7070}`);
+    app.listen(process.env.PORT || 8080, () => {
+      console.log(`Server started on port ${process.env.PORT || 8080}`);
     });
   })
   .catch((err) => {
