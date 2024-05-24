@@ -30,5 +30,6 @@
         "href": ""
       }
     ]
-  }
+  },
+  "headers":["#", "name", "email", "address", "NIDA", "age", "Phone Number", "Action"]
 }

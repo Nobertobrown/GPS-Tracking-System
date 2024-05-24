@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 // const Home = lazy(() => import("../pages/user/Home"));
 const RegistrationForm = lazy(() => import("../pages/admin/RegistrationForm"));
 const CustomerTable = lazy(() => import("../pages/admin/CustomerTable"));
-// const ManageRoutes = lazy(() => import("../pages/admin/ManageRoutes"));
+const MapView = lazy(() => import("../pages/admin/MapView"));
 // const Trips = lazy(() => import("../pages/user/Trips"));
 // const Contact = lazy(() => import("../pages/user/Contact"));`
 // const Booking = lazy(() => import("../pages/admin/Booking"));
@@ -56,12 +56,12 @@ const pagesData = [
     id: 8,
     requiresAuth: true,
   },
-  //   {
-  //     path: "/:busId/register-route",
-  //     element: <RegisterRoute />,
-  //     id: 9,
-  //     requiresAuth: true,
-  //   },
+  {
+    path: "/map",
+    element: <MapView />,
+    id: 9,
+    requiresAuth: true,
+  },
   //   {
   //     path: "/:bus/manage-routes",
   //     element: <ManageRoutes />,

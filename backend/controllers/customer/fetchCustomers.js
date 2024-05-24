@@ -6,7 +6,10 @@ const fetchCustomers = async (req, res, next) => {
     const limit = 50;
     const skip = (page - 1) * limit;
 
-    const customers = await Customer.find().select("name email address nationalId age phoneNo -_id").skip(skip).limit(limit);
+    const customers = await Customer.find()
+      .select("name email address nationalId age phoneNo")
+      .skip(skip)
+      .limit(limit);
 
     if (customers.length === 0) {
       return res
@@ -16,10 +19,10 @@ const fetchCustomers = async (req, res, next) => {
 
     return res.status(200).json({ success: true, customers });
   } catch (err) {
-     if (!err.statusCode) {
-       err.statusCode = 500;
-     }
-     next(err);
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
   }
 };
 

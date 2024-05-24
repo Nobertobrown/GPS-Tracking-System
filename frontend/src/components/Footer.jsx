@@ -1,5 +1,5 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { FaXTwitter, FaHashnode } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import Logo from "./common/Logo";
 import { footer } from "../data/data.json";
 

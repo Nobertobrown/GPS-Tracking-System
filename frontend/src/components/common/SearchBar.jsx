@@ -3,7 +3,7 @@ import Input from "../common/Input";
 
 export const SearchBar = () => {
   return (
-    <div className="grow">
+    <div>
       <Input
         icon={<IoSearchOutline />}
         name="search"

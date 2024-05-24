@@ -76,6 +76,7 @@ const RegistrationForm = () => {
 
               <Input
                 required
+                mandatory={true}
                 label="Phone Number"
                 type="tel"
                 name="phoneNo"
@@ -102,7 +103,7 @@ const RegistrationForm = () => {
               />
             </div>
 
-            <Button type="submit" text="Add member" loading={loading} />
+            <Button type="submit" text="Register" loading={loading} />
           </form>
         </div>
       </div>
