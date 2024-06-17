@@ -12,8 +12,9 @@ import {
 } from "@floating-ui/react";
 import Input from "./Input";
 import Button from "./Button";
+import reserveAPI from "../../api/api";
 
-function Dialog({ isOpen, onClose }) {
+function Dialog({ isOpen, onClose, _id }) {
   const { refs, context } = useFloating({
     open: isOpen,
     onOpenChange: onClose,
@@ -31,8 +32,29 @@ function Dialog({ isOpen, onClose }) {
   const headingId = useId();
   const descriptionId = useId();
 
-  function submit() {
+  function submit(e) {
     onClose();
+    const formValues = {};
+    const formData = new FormData(e.target);
+    formValues["customerId"] = _id;
+
+    formData.forEach((value, key) => {
+      if (value !== "") {
+        formValues[key] = value.toLocaleLowerCase();
+      }
+    });
+
+    try {
+      reserveAPI({
+        method: "PUT",
+        route: "/customer",
+        data: formValues,
+      });
+    } catch (error) {
+      console.error("API request failed:", error);
+    } finally {
+      window.location.reload();
+    }
   }
 
   return (

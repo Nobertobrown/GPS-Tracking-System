@@ -4,7 +4,7 @@ const putCustomer = (req, res, next) => {
   const id = req.body.customerId;
   const customerName = req.body.name;
   const customerAge = req.body.age;
-  const nida = req.body.nationalId;
+  const nida = req.body.nida;
   const email = req.body.email;
   const address = req.body.address;
   const phoneNo = req.body.phoneNo;

@@ -60,7 +60,7 @@ function Popover({ id }) {
         <button
           ref={refs.setReference}
           {...getReferenceProps()}
-          className="flex rounded-md items-center justify-center size-[30px] p-0 text-slate-500 bg-slate-100 hover:text-white hover:bg-slate-600 outline-none transition-all duration-200"
+          className="flex rounded-md items-center justify-center size-[30px] p-0 text-slate-500 bg-slate-100 hover:text-white hover:bg-slate-600 active:text-white active:bg-slate-600 focus:text-white focus:bg-slate-600 outline-none transition-all duration-200"
         >
           <FaEllipsis />
         </button>
@@ -126,7 +126,7 @@ function Popover({ id }) {
             </ul>
           </FloatingFocusManager>
         )}
-        <Dialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
+        <Dialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} _id={id} />
       </FloatingNode>
     </FloatingTree>
   );
