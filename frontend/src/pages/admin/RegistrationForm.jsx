@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Input from "../../components/common/Input";
 import Button from "../../components/common/Button";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import reserveAPI from "../../api/api";
 
 const RegistrationForm = () => {
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const register = async (e) => {
     setLoading(true);
@@ -31,7 +31,7 @@ const RegistrationForm = () => {
 
       if (res && res.customer) {
         toast.success("Customer created successfully!");
-        navigate("/customers");
+        // navigate("/customers");
       }
     } catch (error) {
       console.error("API request failed:", error);

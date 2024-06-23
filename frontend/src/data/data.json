@@ -31,5 +31,5 @@
       }
     ]
   },
-  "headers":["#", "name", "email", "address", "NIDA", "age", "Phone Number", "Action"]
+  "headers":["#", "name", "email", "address", "NIN", "age", "Phone Number", "Action"]
 }

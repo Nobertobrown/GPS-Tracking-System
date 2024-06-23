@@ -6,17 +6,17 @@ import { footer } from "../data/data.json";
 const social = [
   {
     name: "twitter",
-    href: "https://twitter.com/BrownNoberto",
+    href: "#",
     icon: <FaXTwitter />,
   },
   {
     name: "linkedIn",
-    href: "https://www.linkedin.com/in/norberth-kibona-4429a6217/",
+    href: "#",
     icon: <FaLinkedin />,
   },
   {
     name: "github",
-    href: "https://github.com/Nobertobrown",
+    href: "#",
     icon: <FaGithub />,
   },
 ];

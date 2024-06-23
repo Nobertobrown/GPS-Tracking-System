@@ -8,9 +8,11 @@ import Popover from "../../components/common/Popover";
 
 const CustomerTable = () => {
   const [customerList, setCustomerList] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fetchCustomerList = async () => {
+      setLoading(true)
       try {
         const args = {
           method: "GET",
@@ -24,6 +26,8 @@ const CustomerTable = () => {
         }
       } catch (error) {
         console.error("Error fetching customer list:", error);
+      }finally{
+        setLoading(false)
       }
     };
 
@@ -32,7 +36,7 @@ const CustomerTable = () => {
 
   return (
     <>
-      {customerList.length < 1 ? (
+      {!loading && customerList.length < 1 ? (
         <div className="flex items-center min-h-[70vh] text-center justify-center">
           <div className="space-y-4">
             <h1>No customers found!</h1>
