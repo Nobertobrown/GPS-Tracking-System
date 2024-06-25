@@ -31,5 +31,6 @@
       }
     ]
   },
-  "headers":["#", "name", "email", "address", "NIN", "age", "Phone Number", "Action"]
+  "headers":["#", "name", "email", "address", "NIN", "age", "Phone Number", "Action"],
+  "productH":["UUID", "volume", "Action"]
 }

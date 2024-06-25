@@ -15,6 +15,10 @@ const Navbar = () => {
       name: "customers",
       path: "/customers",
     },
+    {
+      name: "products",
+      path: "/products",
+    },
   ];
 
   return (

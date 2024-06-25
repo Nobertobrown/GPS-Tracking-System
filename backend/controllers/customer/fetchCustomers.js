@@ -7,7 +7,7 @@ const fetchCustomers = async (req, res, next) => {
     const skip = (page - 1) * limit;
 
     const customers = await Customer.find()
-      .select("name email address nationalId age phoneNo")
+      .select("name email address nationalId age phoneNo product")
       .skip(skip)
       .limit(limit);
 

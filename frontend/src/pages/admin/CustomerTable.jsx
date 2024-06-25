@@ -66,7 +66,7 @@ const CustomerTable = () => {
               <SearchBar />
             </div>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto -mx-5">
               <table className="w-full whitespace-nowrap">
                 <thead className="text-left bg-slate-100 text-slate-500">
                   <tr className="border-y border-slate-200">

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.26.16",
+    "@ramonak/react-progress-bar": "^5.2.0",
     "axios": "^1.6.8",
     "framer-motion": "^11.1.9",
     "leaflet": "^1.9.4",

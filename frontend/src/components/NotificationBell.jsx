@@ -63,7 +63,7 @@ function NotificationBell() {
       {isOpen && (
         <FloatingFocusManager context={context} modal={false}>
           <div
-            className="text-left bg-white rounded-md shadow-md min-w-[20rem] lg:min-w-[26rem]"
+            className="text-left bg-white rounded-md shadow-md max-w-[26rem] min-w-[20rem]"
             ref={refs.setFloating}
             style={floatingStyles}
             aria-labelledby={headingId}

@@ -5,9 +5,11 @@ import { Route, Routes } from "react-router-dom";
 const RegistrationForm = lazy(() => import("../pages/admin/RegistrationForm"));
 const CustomerTable = lazy(() => import("../pages/admin/CustomerTable"));
 const MapView = lazy(() => import("../pages/admin/MapView"));
-// const Trips = lazy(() => import("../pages/user/Trips"));
-// const Contact = lazy(() => import("../pages/user/Contact"));`
-// const Booking = lazy(() => import("../pages/admin/Booking"));
+const Products = lazy(() => import("../pages/admin/Products"));
+const ProductForm = lazy(() => import("../pages/admin/ProductForm"));
+const ConfigurationForm = lazy(() =>
+  import("../pages/admin/ConfigurationForm")
+);
 // const SignUp = lazy(() => import("../pages/SignUp"));
 // const SignIn = lazy(() => import("../pages/SignIn"));
 // const Payment = lazy(() => import("../pages/user/Payment"));
@@ -18,11 +20,11 @@ const pagesData = [
   //     element: <Home />,
   //     id: 1,
   //   },
-  //   {
-  //     path: "/contact",
-  //     element: <Contact />,
-  //     id: 2,
-  //   },
+  {
+    path: "/configure",
+    element: <ConfigurationForm />,
+    id: 2,
+  },
   // {
   //   path: "/sign-up",
   //   element: <SignUp />,
@@ -33,17 +35,17 @@ const pagesData = [
   //   element: <SignIn />,
   //   id: 4,
   // },
-  //   {
-  //     path: "/trips",
-  //     element: <Trips />,
-  //     id: 5,
-  //   },
-  //   {
-  //     path: "/bookings",
-  //     element: <Booking />,
-  //     id: 6,
-  //     requiresAuth: true,
-  //   },
+  {
+    path: "/products",
+    element: <Products />,
+    id: 5,
+  },
+  {
+    path: "/register-product",
+    element: <ProductForm />,
+    id: 6,
+    requiresAuth: true,
+  },
   {
     path: "/",
     element: <RegistrationForm />,

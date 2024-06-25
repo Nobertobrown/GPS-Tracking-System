@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 import {
   useFloating,
   autoUpdate,
@@ -25,7 +26,7 @@ import {
   IoCreateOutline,
 } from "react-icons/io5";
 
-function Popover({ id }) {
+function Popover({ id, className }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const navigate = useNavigate();
@@ -60,7 +61,10 @@ function Popover({ id }) {
         <button
           ref={refs.setReference}
           {...getReferenceProps()}
-          className="flex rounded-md items-center justify-center size-[30px] p-0 text-slate-500 bg-slate-100 hover:text-white hover:bg-slate-600 active:text-white active:bg-slate-600 focus:text-white focus:bg-slate-600 outline-none transition-all duration-200"
+          className={twMerge(
+            `flex rounded-md items-center justify-center size-[30px] p-0 text-slate-500 bg-slate-100 hover:text-white hover:bg-slate-600 active:text-white active:bg-slate-600 focus:text-white focus:bg-slate-600 outline-none transition-all duration-200`,
+            className
+          )}
         >
           <FaEllipsis />
         </button>
@@ -126,7 +130,11 @@ function Popover({ id }) {
             </ul>
           </FloatingFocusManager>
         )}
-        <Dialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} _id={id} />
+        <Dialog
+          isOpen={isDialogOpen}
+          onClose={() => setIsDialogOpen(false)}
+          _id={id}
+        />
       </FloatingNode>
     </FloatingTree>
   );
