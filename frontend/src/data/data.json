@@ -32,5 +32,19 @@
     ]
   },
   "headers":["#", "name", "email", "address", "NIN", "age", "Phone Number", "Action"],
-  "productH":["UUID", "volume", "Action"]
+  "productH":["UUID", "volume", "Action"],
+  "navOptions":[
+    {
+      "name": "home",
+      "path": "/"
+    },
+    {
+      "name": "customers",
+      "path": "/customers"
+    },
+    {
+      "name": "products",
+      "path": "/products"
+    }
+  ]
 }

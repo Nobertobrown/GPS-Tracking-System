@@ -1,7 +1,7 @@
 const Product = require("../../models/Product");
 
 const deleteProduct = (req, res, next) => {
-  const id = req.body.productId;
+  const id = req.body.Id;
 
   Product.findByIdAndDelete(id)
     .then((product) => {

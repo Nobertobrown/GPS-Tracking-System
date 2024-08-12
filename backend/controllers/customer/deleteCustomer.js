@@ -1,7 +1,7 @@
 const Customer = require("../../models/Customer");
 
 const deleteCustomer = (req, res, next) => {
-  const id = req.body.customerId;
+  const id = req.body.Id;
 
   Customer.findByIdAndDelete(id)
     .then((customer) => {

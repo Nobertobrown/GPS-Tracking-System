@@ -18,7 +18,7 @@ import {
 import reserveAPI from "../../api/api";
 import Dialog from "./Dialog";
 import { FaEllipsis } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   IoEyeOutline,
   IoTrashOutline,
@@ -30,6 +30,7 @@ function Popover({ id, className }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { refs, floatingStyles, context } = useFloating({
     placement: "bottom-end",
@@ -116,8 +117,11 @@ function Popover({ id, className }) {
                     setIsOpen(false);
                     reserveAPI({
                       method: "DELETE",
-                      route: "/customer",
-                      data: { customerId: id },
+                      route:
+                        location.pathname == "/customers"
+                          ? "/customer"
+                          : "/product",
+                      data: { Id: id },
                     });
                     window.location.reload();
                   }}
