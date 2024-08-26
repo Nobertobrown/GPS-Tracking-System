@@ -14,6 +14,7 @@ const productSchema = new Schema(
     },
     lowerLimit: {
       type: Number,
+      default: 25
     },
   },
   { timestamps: true }

@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import reserveAPI from "../../api/api";
 import { productH } from "../../data/data.json";
 import { SearchBar } from "../../components/common/SearchBar";
 import Button from "../../components/common/Button";
 import Popover from "../../components/common/Popover";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { useQueryClient } from "@tanstack/react-query";
+import { Query } from "../../services/external-api.service";
 
 const Products = () => {
   const [loading, setLoading] = useState(false);
   const [productList, setProductList] = useState([]);
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     const fetchProductList = async () => {
       setLoading(true);
       try {
         const args = {
+          key:"getProducts",
           method: "GET",
           route: "/product",
         };
 
-        const res = await reserveAPI(args);
+        const res = await queryClient.ensureQueryData(Query(args));
 
         if (res && res.products) {
           setProductList(res.products);
@@ -35,7 +38,7 @@ const Products = () => {
     };
 
     fetchProductList();
-  }, []);
+  }, [queryClient]);
 
   return (
     <>

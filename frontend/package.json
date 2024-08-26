@@ -12,6 +12,7 @@
   "dependencies": {
     "@floating-ui/react": "^0.26.16",
     "@ramonak/react-progress-bar": "^5.2.0",
+    "@tanstack/react-query": "^5.51.23",
     "axios": "^1.6.8",
     "framer-motion": "^11.1.9",
     "leaflet": "^1.9.4",
@@ -22,9 +23,11 @@
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.23.1",
     "react-select": "^5.8.0",
+    "socket.io-client": "^4.7.5",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.51.23",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",

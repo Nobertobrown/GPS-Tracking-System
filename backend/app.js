@@ -42,9 +42,12 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(`${process.env.MONGODB_CONNECTION_STRING}`)
   .then((_) => {
-    app.listen(process.env.PORT || 9090, () => {
+    const server = app.listen(process.env.PORT || 9090, () => {
       console.log(`Server started on port ${process.env.PORT || 9090}`);
     });
+
+    const io = require("./utils/socket").init(server);
+    io.on("connection", (socket) => {});
   })
   .catch((err) => {
     console.log(err);

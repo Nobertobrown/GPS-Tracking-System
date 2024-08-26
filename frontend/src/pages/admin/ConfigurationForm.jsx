@@ -55,7 +55,7 @@ const ConfigurationForm = () => {
               label="Limit"
               required
               mandatory={true}
-              placeholder="20"
+              placeholder="Default: 25"
             />
           </div>
 

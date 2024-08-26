@@ -15,6 +15,7 @@ const notificationSchema = new Schema(
     },
     isRead: {
       type: Boolean,
+      default: false,
       required: true,
     },
   },
